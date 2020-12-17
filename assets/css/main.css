@@ -1,3 +1,7 @@
+/* @media only screen and (max-width: 768px) {
+
+} */
+
 body {
   font-family: "Encode Sans Condensed", "Nova Mono", "Iosevka Web", "Avenir Next Condensed", "Lato", Helvetica, Arial, sans-serif;
   font-weight: 200;
@@ -5,24 +9,27 @@ body {
   /* background: #f8f8f8; */
   /* margin: 50px 0 100px; */
   margin: 0;
-  letter-spacing: 0.3px;
-  color: #39424b;
+  /* letter-spacing: 0.3px; */
+  /* color: #39424b; */
   /* position: relative; */
   text-transform: lowercase;
 }
+
+/* body, html {
+  width: 100%;
+  height: 100%;
+} */
 
 h1,
 h2,
 h3,
 h4,
 h5 {
-  /* text-transform: uppercase; */
   margin: 0;
   font-family: "Cutive Mono", "Iosevka Web", Helvetica, Arial, sans-serif;
 }
 
 h1 {
-  /* font-family: "Josefin Sans", Helvetica, Arial, sans-serif; */
   font-weight: 700;
   font-size: 40px;
   letter-spacing: 1px;
@@ -30,20 +37,15 @@ h1 {
 }
 
 h2 {
-  /* font-family: "Josefin Sans", Helvetica, Arial, sans-serif; */
   font-weight: 300;
   font-size: 16px;
   letter-spacing: 0.5px;
 }
 
 h3 {
-  /* font-family: "Lato", Helvetica, Arial, sans-serif; */
   font-weight: 100;
   font-size: 18px;
   letter-spacing: 0.4px;
-  /* padding-top: 4px;
-  padding-left: 2px;
-  padding-right: 2px; */
 }
 
 h3.bold {
@@ -52,7 +54,6 @@ h3.bold {
 }
 
 h4 {
-  /* font-family: "Lato", Helvetica, Arial, sans-serif; */
   font-weight: 200;
   font-size: 12px;
   color: #bd93f9
@@ -63,7 +64,6 @@ h4.bold {
 }
 
 h5 {
-  /* font-family: "Lato", Helvetica, Arial, sans-serif; */
   font-weight: 300;
   font-size: 11px;
 }
@@ -72,7 +72,6 @@ h5.italic {
 }
 
 h6 {
-  /* font-family: "Lato", Helvetica, Arial, sans-serif; */
   font-weight: 400;
   font-size: 11px;
   margin: 2px 0;
@@ -98,7 +97,6 @@ a .fa-external-link {
 
 p,
 li {
-  /* font-family: "Nova Mono"; */
   font-size: 13px;
   font-weight: 200;
   letter-spacing: 0.4px;
@@ -106,7 +104,6 @@ li {
 
 blockquote {
   font-size: 11px;
-  /* font-family: "Lato", Helvetica, Arial, sans-serif; */
   font-weight: 400;
   font-style: italic;
   margin: 10px 25px;
@@ -191,26 +188,43 @@ ul.two-column li {
   clear: both;
 }
 
-/*
-      .profile-header {
-          width: auto;
-          max-width:  300px;
-          margin-right: 50px;
-      }
-      */
-
-/*
-      .profile-pic {
-          width: auto;
-          max-width: 800px;
-          margin-right: auto;
-          /* margin-top: -5px; */
-/* margin-right: 18px; */ /*
-      }
-      */
 .green {
   color: #50fa7b;
 }
+
+
+/* Layouts */
+.page {
+  background: #282a36;
+  background-color: #282a36;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  color: #f8f8f2;
+  /* width: 612px; */
+  /* min-height: 792px; */
+  display: block;
+  margin: 0 auto;
+  /* border-top: 10px solid #50fa7b; */
+  /* border-left: 10px solid #bd93f9; */
+  border-left: 10px solid transparent;
+  border-top: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to bottom, rgba(0,0,0,0), #50fa7b 50%, rgba(0,0,0,0) 100% );
+  /* padding: 36px 22px 30px 34px; */
+  padding: 50px; /* 50px calc(50px + 10%);*/
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  /* height: 100%; */
+  /* position: relative; */
+  /* position: relative; */
+}
+
+.resume-header {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
 
 .profile-pic img {
   height: 100px;
@@ -229,35 +243,11 @@ ul.two-column li {
   /* text-align: justify */
 }
 
-/* Layouts */
-.page {
-  background: #282a36;
-  background-color: #282a36;
-  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-  color: #f8f8f2;
-  /* width: 612px; */
-  min-height: 792px;
-  display: block;
-  margin: 0 auto;
-  /* border-top: 10px solid #50fa7b; */
-  /* border-left: 10px solid #bd93f9; */
-  border-left: 10px solid transparent;
-  border-top: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(to bottom, rgba(0,0,0,0), #50fa7b 50%, rgba(0,0,0,0) 100% );
-  /* padding: 36px 22px 30px 34px; */
-  padding: 50px; /* 50px calc(50px + 10%);*/
-  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
-  position: relative;
-  /* position: relative; */
-}
 
-#particles-js {
-  position: absolute;
+/* #particles-js { */
+  /* position: absolute;
   width: 100%;
-  height: 100vh;
+  height: 100vh; */
   /* position:absolute;
   width: 100%;
   height: 100%;
@@ -267,16 +257,15 @@ ul.two-column li {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%; */
-}
+/* } */
 
-.page:after {
+/* .page:after {
   content: "";
   display: table;
   clear: both;
-}
+} */
 
-.left-column,
-.profile-header {
+.left-column {
   float: left;
   /* width: 160px; */
   /* width: 300px; */
@@ -287,18 +276,28 @@ ul.two-column li {
 }
 
 .profile-header {
-  padding-top: 25px;
+  padding: 25px 0;
+  flex-grow: 1;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* flex-wrap: wrap-reverse; */
+  /* justify-content: space-between; */
+  /* align-content: flex-end; */
+  /* align-items: flex-start; */
 }
 
-.right-column,
-.profile-pic {
+.right-column {
   width: auto;
   overflow: hidden;
   /* max-width: 850px; */
   /* margin-right: 50px; */
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  margin-left: auto;
 }
 
+.profile-pic {
+  /* marin-left: auto; */
+}
 .item {
   /* margin-bottom: 15px; */
   margin-top: 20px;
@@ -346,6 +345,8 @@ ul.two-column li {
   padding: 2px;
   margin-left: 5px;
 }
+
+
 
 @media only screen and (max-width: 800px) {
   .page {

@@ -1,28 +1,545 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui" />
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
     <title>Matthew J. Ogram</title>
-    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:100,200,300,400,500,600,700,800' rel='stylesheet' type='text/css">
-    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono' rel='stylesheet' type='text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nova+Mono' rel='stylesheet' type='text/css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/v4-shims.css" />
-    <link rel="stylesheet" href="assets/fonts/iosevka/webfont.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <!-- <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> -->
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed:100,200,300,400,500,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nova+Mono" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+    <link rel="stylesheet" href="assets/fonts/iosevka/webfont.css">
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+      /* Utils */
+      /*----- Colors -----*/
+      /*----- Fonts -----*/
+      /*----- Dimensions and sizes -----*/
+      /* Base */
+      body {
+        font-family: "Encode Sans Condensed", "Nova Mono", "Iosevka Web", "Avenir Next Condensed", "Lato", Helvetica, Arial, sans-serif;
+        font-weight: 200;
+        background: #44475a;
+        /* background: #f8f8f8; */
+        /* margin: 50px 0 100px; */
+        margin: 0;
+        letter-spacing: 0.3px;
+        color: #39424b;
+        /* position: relative; */
+        text-transform: lowercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        /* text-transform: uppercase; */
+        margin: 0;
+        font-family: "Cutive Mono", "Iosevka Web", Helvetica, Arial, sans-serif;
+      }
+
+      h1 {
+        /* font-family: "Josefin Sans", Helvetica, Arial, sans-serif; */
+        font-weight: 700;
+        font-size: 40px;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        /* font-family: "Josefin Sans", Helvetica, Arial, sans-serif; */
+        font-weight: 300;
+        font-size: 16px;
+        letter-spacing: 0.5px;
+      }
+
+      h3 {
+        /* font-family: "Lato", Helvetica, Arial, sans-serif; */
+        font-weight: 100;
+        font-size: 18px;
+        letter-spacing: 0.4px;
+        /* padding-top: 4px;
+        padding-left: 2px;
+        padding-right: 2px; */
+      }
+
+      h3.bold {
+        font-weight: 600;
+        color: #bd93f9;
+      }
+
+      h4 {
+        /* font-family: "Lato", Helvetica, Arial, sans-serif; */
+        font-weight: 200;
+        font-size: 12px;
+        color: #bd93f9
+      }
+
+      h4.bold {
+        font-weight: 700;
+      }
+
+      h5 {
+        /* font-family: "Lato", Helvetica, Arial, sans-serif; */
+        font-weight: 300;
+        font-size: 11px;
+      }
+      h5.italic {
+        font-style: italic;
+      }
+
+      h6 {
+        /* font-family: "Lato", Helvetica, Arial, sans-serif; */
+        font-weight: 400;
+        font-size: 11px;
+        margin: 2px 0;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+
+      a:hover,
+      a:hover > i.fa-external-link,
+      .info-tag-container a:hover .fa.fa-external-link {
+        color: #2895f1;
+      }
+
+      a .fa-external-link {
+        font-size: 8px;
+        margin-left: 2px;
+        vertical-align: text-top;
+        color: #999;
+      }
+
+      p,
+      li {
+        /* font-family: "Nova Mono"; */
+        font-size: 13px;
+        font-weight: 200;
+        letter-spacing: 0.4px;
+      }
+
+      blockquote {
+        font-size: 11px;
+        /* font-family: "Lato", Helvetica, Arial, sans-serif; */
+        font-weight: 400;
+        font-style: italic;
+        margin: 10px 25px;
+      }
+
+      em {
+        color: #999;
+      }
+
+      ul {
+        margin: 10px 0 0;
+        -webkit-padding-start: 25px;
+      }
+
+      ul li {
+        padding-left: 10px;
+        text-align: justify;
+      }
+
+      ul.minimal {
+        list-style: none;
+        padding: 0 0 0 15px;
+        border-left: 2px solid transparent;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(to bottom, rgba(0,0,0,0), #6272a4 50%, rgba(0,0,0,0) 100%);
+      }
+
+      ul.minimal li {
+        margin-bottom: 3px;
+        padding-left: 0;
+      }
+
+      ul.two-column {
+        -webkit-column-count: 2;
+        -webkit-column-gap: 28px;
+        -moz-column-count: 2;
+        column-count: 2;
+        -moz-column-gap: 28px;
+        column-gap: 28px;
+      }
+
+      ul.two-column li {
+        padding-left: 0;
+        padding-bottom: 5px;
+      }
+
+      @page {
+        size: A4;
+      }
+
+      .container {
+        padding-top: 20px;
+      }
+
+      .keyline {
+        width: 45px;
+        /* margin: 8px 0 10px; */
+        margin: 4px 0 10px;
+        border-top: 1px solid #ff5701;
+        display: none;
+      }
+
+      .pull-left {
+        float: left;
+      }
+
+      .pull-right {
+        float: right;
+      }
+
+      .display-block {
+        display: block;
+      }
+
+      .display-inline {
+        display: inline;
+      }
+
+      .clearfix:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /*
+            .profile-header {
+                width: auto;
+                max-width:  300px;
+                margin-right: 50px;
+            }
+            */
+
+      /*
+            .profile-pic {
+                width: auto;
+                max-width: 800px;
+                margin-right: auto;
+                /* margin-top: -5px; */
+      /* margin-right: 18px; */ /*
+            }
+            */
+      .green {
+        color: #50fa7b;
+      }
+
+      .profile-pic img {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        padding: 0;
+        /* object-fit: cover; */
+        border: 2px solid #50fa7b	;
+        /* object-fit: scale-down; */
+        /* background:hite; */
+        float: right;
+      }
+
+      .summary {
+        margin: 10px 0;
+        /* text-align: justify */
+      }
+
+      /* Layouts */
+      .page {
+        background: #282a36;
+        background-color: #282a36;
+        background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+        /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+        color: #f8f8f2;
+        /* width: 612px; */
+        min-height: 792px;
+        display: block;
+        margin: 0 auto;
+        /* border-top: 10px solid #50fa7b; */
+        /* border-left: 10px solid #bd93f9; */
+        border-left: 10px solid transparent;
+        border-top: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(to bottom, rgba(0,0,0,0), #50fa7b 50%, rgba(0,0,0,0) 100% );
+        /* padding: 36px 22px 30px 34px; */
+        padding: 50px; /* 50px calc(50px + 10%);*/
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+        position: relative;
+        /* position: relative; */
+      }
+
+      #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        /* position:absolute;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: #282a36;
+        background-image: url("");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%; */
+      }
+
+      .page:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      .left-column,
+      .profile-header {
+        float: left;
+        /* width: 160px; */
+        /* width: 300px; */
+        /* margin-right: 20px; */
+        margin-right: 50px;
+        /* padding-top: 25px; */
+        word-wrap: break-word;
+      }
+
+      .profile-header {
+        padding-top: 25px;
+      }
+
+      .right-column,
+      .profile-pic {
+        width: auto;
+        overflow: hidden;
+        /* max-width: 850px; */
+        /* margin-right: 50px; */
+        margin: 0 auto;
+      }
+
+      .item {
+        /* margin-bottom: 15px; */
+        margin-top: 20px;
+        padding-top: 20px;
+        /* border-top: 1px solid #393e46; */
+      }
+
+      .item:first-child,
+      .title + .item {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: none;
+      }
+
+      .title {
+        /* background-color: #393e46; */
+        background-color: #44475a;
+        padding: 5px;
+        margin-bottom: 15px;
+        border-bottom: 3px solid transparent;
+        border-left: 3px solid transparent;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(to right, #50fa7b, rgba(0,0,0,0) 100% 100%);
+      }
+
+      .title h3 {
+        margin-left: 25px;
+      }
+
+      .title > i {
+        float: left;
+        padding-top: 4px;
+        padding-left: 4px;
+        padding-right: 4px;
+      }
+
+      /*.right-column > .container > .title {
+        padding: 5px;
+        margin-bottom: 15px;
+      }*/
+
+      .gpa {
+        border: 1px solid white;
+        border-radius: 35%;
+        padding: 2px;
+        margin-left: 5px;
+      }
+
+      @media only screen and (max-width: 800px) {
+        .page {
+          padding: 35px;
+        }
+
+        .left-column,
+        .right-column {
+          width: 100%;
+          margin: 0;
+        }
+
+        .skills-container > section > ul > li
+                /*,.languages-container > ul > li */ {
+          display: inline;
+        }
+
+        .skills-container > section > ul > li > h6
+                /*,.languages-container > ul > li > h6 */ {
+          padding-right: 10px;
+          display: inline;
+        }
+
+        .info-tag-container .info-text {
+          font-size: 14px !important;
+        }
+
+        h3 {
+          font-size: 16px !important;
+        }
+
+        h4 {
+          font-size: 14px !important;
+        }
+
+        h6 {
+          font-size: 12px !important;
+        }
+
+        p,
+        li {
+          font-size: 14px;
+        }
+
+        .item {
+          margin-top: 10px;
+          padding-top: 10px;
+        }
+      }
+
+      @media print {
+        body {
+          margin: 0;
+          background: white;
+          color: #000;
+        }
+
+        main {
+          background: white !important;
+          color: black !important;
+        }
+
+        @page {
+          border-top: 2px solid white;
+        }
+
+
+        .page {
+          color: #000;
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 35px 0 35px; /* 35px  35px; */
+          box-shadow: none;
+        }
+
+        .title {
+          background-color: #393e46;
+          color: white;
+        }
+
+        .keyline {
+          width: 45px;
+          /* margin: 8px 0 10px; */
+          margin: 4px 0 10px;
+          border-top: 2px solid #ff5701;
+          display: none;
+        }
+
+        .page .resume-header,
+        .page .resume-content {
+          padding: 0 35px 0 35px;
+          /* text-align: justify; */
+        }
+
+        .container > section {
+          page-break-inside: avoid;
+        }
+
+        .left-column {
+          width: 250px;
+          margin-right: 35px;
+        }
+
+        .left-column .container {
+          page-break-inside: avoid;
+        }
+
+        .fa-external-link {
+          display: none;
+        }
+
+        .gpa {
+          border: 1px solid #393e46;
+          margin-left: 10px;
+        }
+      }
+
+      /* Components */
+      .info-tag-container {
+        margin-bottom: 5px;
+      }
+
+      .info-tag-container .fa {
+        font-size: 14px;
+        width: 12px;
+        margin-right: 5px;
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      .info-tag-container .fa.fa-map-marker {
+        font-size: 16px;
+      }
+
+      .info-tag-container .fa.fa-mobile {
+        font-size: 18px;
+      }
+
+      .info-tag-container .fa.fa-envelope-o {
+        font-size: 12px;
+      }
+
+      .info-tag-container .fa.fa-desktop {
+        font-size: 11px;
+      }
+
+      .info-tag-container .fa.fa-external-link {
+        width: auto;
+        font-size: 8px;
+        margin-left: 2px;
+        vertical-align: text-top;
+        color: #999;
+      }
+
+      .info-tag-container .info-text {
+        font-size: 11px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      .references-container .fa {
+        font-size: 14px;
+      }
+    </style>
   </head>
+
   <body>
     <main id="resume" class="page">
       <!-- <div id="particles-js"></div> -->
       <header class="resume-header clearfix">
         <div class="profile-header">
           <h1 class="display-block">Matthew J. Ogram</h1>
-          <h2 class="display-block">Software Engineer [Frontend]</h2>
+          <h2 class="display-block">Software Engineer</h2>
         </div>
         <div class="profile-pic">
-          <img src="assets/img/matt-edit.png" alt="profile-pic" />
+          <img src="assets/img/me-gradient.png" alt="profile-pic">
         </div>
       </header>
       <div class="resume-content">
@@ -36,7 +553,7 @@
             <div class="info-tag-container">
               <i class="fa fa-map-marker"></i>
               <span class="info-text">
-                12043 Alta Carmel Ct<br />San Diego, CA 92128
+                12043 Alta Carmel Ct<br>San Diego, California CA 92128
               </span>
             </div>
             <div class="info-tag-container">
@@ -48,19 +565,27 @@
               <span class="info-text">(858) 472-1036</span>
             </div>
             <div class="info-tag-container">
+              <i class="fa fa-desktop"></i>
+              <span class="info-text">
+                <a href="https://github.com/emjayoh" target="_blank" rel="noopener">
+                  github.com/emjayoh
+                  <i class="fa fa-external-link" aria-hidden="true"></i>
+                </a>
+              </span>
+            </div>
+            <div class="info-tag-container">
               <i class="fa fa-linkedin"></i>
               <span class="info-text">
-                <a href="https://linkedin.com/mattogram" target="_blank">
-                  mattogram
-                  <i class="fa fa-external-link" aria-hidden="true"></i>
+                <a href="https://linkedin.com/mattogram" target="_blank" rel="noopener">
+                  emjayoh <i class="fa fa-external-link" aria-hidden="true"></i>
                 </a>
               </span>
             </div>
             <div class="info-tag-container">
               <i class="fa fa-github"></i>
               <span class="info-text">
-                <a href="https://github.com/emjayoh" target="_blank">
-                  emjayoh
+                <a href="https://github.com/emjayoh" target="_blank" rel="noopener">
+                  mattogram
                   <i class="fa fa-external-link" aria-hidden="true"></i>
                 </a>
               </span>
@@ -133,8 +658,8 @@
                   <span>Bootstrap (2|3|4)</span>
                 </li>
                 <li>
-                  <span>Material design</span>
-                </li>
+                  <span>Material design
+                </span></li>
                 <li>
                   <span>Responsive frameworks</span>
                 </li>
@@ -145,7 +670,7 @@
                   <span>TDD</span>
                 </li>
                 <li>
-                  <span>Storybook</span>
+                  <h6>Storybook</h6>
                 </li>
                 <li>
                   <span>Git/GitHub</span>
@@ -251,7 +776,7 @@
                   <span>CMS</span>
                 </li>
                 <li>
-                  <span>eCommerce/PCI-compliance</span>
+                  <span>eCommernce/PCI-compliance</span>
                 </li>
                 <li>
                   <span>SSL</span>
@@ -263,7 +788,7 @@
                   <span>Emacs</span>
                 </li>
                 <li>
-                  <span>Vagrant/Ansible/Docker</span>
+                  <h6>Vagrant/Ansible/Docker</h6>
                 </li>
               </ul>
             </section>
@@ -317,7 +842,7 @@
                 <li>reddit.com/r/unixporn</li>
                 <li>Zsh</li>
                 <li>Kitty/Alacritty/Hyper/URXVT/iTerm</li>
-                <li>WebStorm</li>
+                <li>Webstorm</li>
                 <li>VsCode</li>
                 <li>Emacs</li>
                 <li>tmux</li>
@@ -347,7 +872,7 @@
             <section class="item">
               <div class="section-header clearfix">
                 <h3 class="bold pull-left">
-                  <a href="https://repsandcompany.com" target="_blank">
+                  <a href="https://repsandcompany.com" target="_blank" rel="noopener">
                     REPS &amp; Co
                     <i class="fa fa-external-link" aria-hidden="true"></i>
                   </a>
@@ -367,7 +892,7 @@
                 assisted transitioning the team to OpenAPI
                 specification/tooling. Strategized with product team to
                 evaluate/estimate upcoming features. Migrated team from ZenHub
-                to JIRA and facilitated many other rapid-growth enhancements to
+                to JIRA and faciliated many other rapdid-growth enhancements to
                 development team such as Sentry, New Relic, semantic versioning
                 (automated with release notes), Git-flow, linting commit hooks,
                 serverless hosting via AWS (automated deploys) and much more.
@@ -375,7 +900,7 @@
               <ul class="minimal">
                 <li>Credit card management interface (Plaid)</li>
                 <li>Inventory autopricer</li>
-                <li>User management interface</li>
+                <li>User management inteface</li>
                 <li>Heavy focus on minimizing technical debt</li>
                 <li>Overseeing many remote development resources</li>
               </ul>
@@ -383,7 +908,7 @@
             <section class="item">
               <div class="section-header clearfix">
                 <h3 class="bold pull-left">
-                  <a href="https://repsandcompany.com" target="_blank">
+                  <a href="https://repsandcompany.com" target="_blank" rel="noopener">
                     REPS &amp; Co
                     <i class="fa fa-external-link" aria-hidden="true"></i>
                   </a>
@@ -425,7 +950,7 @@
                   SASS, styled components, post/pre-CSS, Hot-reloading,
                   Sourcemaps, Sentry, New Relic, AWS identity integration,
                   Serverless Deploys (AWS), Axios, LoDash, ESLint auto code
-                  analysis, Prettier code auto-formatting, pre/post-commit
+                  analytisis, Prettier code auto-formatting, pre/post-commit
                   hooks with Husky, Faker.js with generator scripts for local
                   data, Prism for local API mocking, Python, Vagrant, Ansible,
                   Docker, Ubuntu, Jenkins, OpenAPI, React Storybook, Cosmos
@@ -443,7 +968,7 @@
             <section class="item">
               <div class="section-header clearfix">
                 <h3 class="bold pull-left">
-                  <a href="https://repsandcompany.com" target="_blank">
+                  <a href="https://repsandcompany.com" target="_blank" rel="noopener">
                     Self-employed
                     <i class="fa fa-external-link" aria-hidden="true"></i>
                   </a>
@@ -477,7 +1002,7 @@
             <section class="item">
               <div class="section-header clearfix">
                 <h3 class="bold pull-left">
-                  <a href="https://www.intuit.com/" target="_blank">
+                  <a href="https://www.intuit.com/" target="_blank" rel="noopener">
                     Intuit, Inc.
                     <i class="fa fa-external-link" aria-hidden="true"></i>
                   </a>
@@ -535,15 +1060,12 @@
                 <li>
                   First Intuit team to adopt React, Git, and AWS (high-risk)
                 </li>
-              </ul>
-            </section>
+
+            </ul></section>
             <section class="item">
               <div class="section-header clearfix">
                 <h3 class="bold pull-left">
-                  <a
-                    href="https://www.internetmarketinginc.com/"
-                    target="_blank"
-                  >
+                  <a href="https://www.internetmarketinginc.com/" target="_blank" rel="noopener">
                     Internet Marketing Inc.
                     <i class="fa fa-external-link" aria-hidden="true"></i>
                   </a>
@@ -561,7 +1083,7 @@
                 Lead and managed multiple teams of developers (in-house and
                 outsourced) in creating full-featured enterprise websites and
                 web applications. Project ranged in complexity, from simple
-                &quot;brochure&quot; style websites to complex Healthcare
+                "brochure" style websites to complex Healthcare
                 Provider search engines to e-Commerce. Facilitated countless
                 custom API connections for clients proprietary API services
                 (movie ticketing, legal information). Created and maintained
@@ -575,7 +1097,7 @@
                 Implemented SVN as standard-practice and trained employees
                 accordingly. Solidified development best-practices and enforced
                 for each project. In my short time at IMI, I increased the Web
-                Development department&#39;s revenue by over 300%. This was
+                Development department's revenue by over 300%. This was
                 achieved by increasing efficiency and throughput while also
                 producing a superior product. Also gained ample experience in
                 client communications and project management as I filled gaps
@@ -589,7 +1111,7 @@
                 </li>
                 <li>Built team around me from the ground-up</li>
                 <li>
-                  Go-to engineer for entire company&#x27;s technical problems
+                  Go-to engineer for entire company's technical problems
                   and challenges
                 </li>
               </ul>
@@ -597,7 +1119,7 @@
             <section class="item">
               <div class="section-header clearfix">
                 <h3 class="bold pull-left">
-                  <a href="https://bexbrands.com/work/suja/" target="_blank">
+                  <a href="https://bexbrands.com/work/suja/" target="_blank" rel="noopener">
                     Suja / Flank Marketing / CheapSally / TabJuice
                     <i class="fa fa-external-link" aria-hidden="true"></i>
                   </a>
@@ -605,8 +1127,8 @@
 
                 <h5 class="italic pull-right">
                   <i class="fas fa-calendar-alt"></i>&nbsp;
-                  <span class="startDate">May 2011</span>
-                  <span class="endDate"> - Mar 2012</span>
+                  <span class="startDate">05/2011</span>
+                  <span class="endDate"> - 03/2012</span>
                 </h5>
               </div>
               <h4>Senior Software Engineer</h4>
@@ -660,20 +1182,20 @@
                   complex WordPress applications
                 </li>
                 <li>
-                  Achieved all-A&#x27;s on website performance test for all
+                  Achieved all-A's on website performance test for all
                   company applications, increasing revenue across the board
                 </li>
               </ul>
             </section>
             <section class="item">
               <div class="section-header clearfix">
-                <a href="http://holdfree.com" target="_blank">
+                <a href="http://holdfree.com" target="_blank" rel="noopener">
                   <h3 class="bold pull-left">Hold-Free Networks</h3>
                 </a>
                 <h5 class="italic pull-right">
                   <i class="fas fa-calendar-alt"></i>&nbsp;
-                  <span class="startDate">May 2011</span>
-                  <span class="endDate"> - Mar 2012</span>
+                  <span class="startDate">05/2011</span>
+                  <span class="endDate"> - 03/2012</span>
                 </h5>
               </div>
               <h4>Software Engineer</h4>
@@ -693,7 +1215,7 @@
                 </li>
                 <li>High stress startup environment</li>
                 <li>
-                  Successfully demonstrated products to large telecommunication
+                  Successfully demod products to large telecommuncation
                   companies
                 </li>
               </ul>
@@ -710,7 +1232,7 @@
               <h4>Intern -&gt; Lead Software Engineer</h4>
 
               <p class="summary">
-                Lead a highly motivated team of developers to create advanced web
+                Lead a highly motivated team of developers to create avanced web
                 2.0 applications using the LAMP architecture.
                 Designed/maintained a specialized, fully object-oriented MVC
                 framework (PHP) that featured an extensive library of custom
@@ -722,12 +1244,12 @@
                 validation, logging and error handling. The framework also
                 helped ensure protection against a variety of common web
                 application vulnerabilities (SQL injection, XSS), allowed
-                &quot;pretty&quot; URL rewrites, and handled database-oriented
+                "pretty" URL rewrites, and handled database-oriented
                 configurable session management. Created and maintained a fully
                 documented API (PHP), allowing access to a host of services and
                 guaranteeing security/authenticity of requests using SSL, MD5
                 signatures and public key cryptography. The API featured a
-                backend UI panel, &quot;instructions&quot;, statistics and other
+                backend UI panel, "instructions", statistics and other
                 useful information. Obtained ample experience in elegant UI
                 design. Maintained multiple checkout flows with complex A/B
                 testing for analysis. Comprehensive understanding the of the
@@ -736,7 +1258,7 @@
                 to build rich, responsive client-side applications. Expert in
                 XML/JSON data formatting and translation techniques. Implemented
                 cross-domain AJAX capabilities in order to circumvent the
-                &quot;same origin policy&quot; for iFrames and facilitate
+                "same origin policy" for iFrames and facilitate
                 seamless protocol changes. Responsible for setting up our
                 project repository in version control (specifically SVN).
                 Well-versed in all SVN commands and IDEs and able to run
@@ -745,13 +1267,15 @@
                 performance optimization.
               </p>
               <ul class="minimal">
-                <li>From intern to lead project developer in one year</li>
-                <li>One of the first Facebook eCommerce apps</li>
-                <li>Featured in TIME Magazine</li>
-                <li>Winner of 2008 FBFund Competition ($25,000)</li>
-                <ul>
-                  <li><a href="https://www.adweek.com/digital/fbfund-review-realgifts/" target="_blank">AdWeek Review</a></li>
-                </ul>
+                <li>Early exposure to mobile web JavaScript applications</li>
+                <li>
+                  Cross-platform java install scripts which managed dependencies
+                </li>
+                <li>
+                  Successfully demod products to large telecommuncation
+                  companies
+                </li>
+                <li>High-stress startup environment</li>
               </ul>
             </section>
           </div>
@@ -766,6 +1290,7 @@
                 <h3 class="bold pull-left">
                   University of California, Santa Barbara
                 </h3>
+
                 <h5 class="italic pull-right">
                   <i class="fas fa-calendar-alt"></i>&nbsp;
                   <span class="startDate">May 2002</span>
@@ -773,7 +1298,7 @@
                 </h5>
               </div>
               <h4 class="display-inline">
-                Bachelor of Science - Computer Science (Focus: Network Computing)
+                Bachelor of Science Computer Science (Focus: Network Computing)
               </h4>
             </section>
           </div>
@@ -790,15 +1315,9 @@
         </div>
       </div>
     </main>
-    <!-- <script type="text/javascript">
+    <script type="text/javascript">
       // particlesJS("resume", {"particles":{"number":{"value":80,"density":{"enable":true,"value_area":800}},"color":{"value":"#ffffff"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.5,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#ffffff","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var count_particles, stats, update;
-    </script> -->
-    <!-- <script
-      color="0,0,0"
-      opacity="0.7"
-      zIndex="-2"
-      count="120"
-      src="assets/js/canvas-nest.js"
-    ></script> -->
-  </body>
-</html>
+    </script>
+
+
+</body></html>
