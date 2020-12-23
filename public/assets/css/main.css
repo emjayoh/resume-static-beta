@@ -5,7 +5,7 @@
 body {
   font-family: "Encode Sans Condensed", "Nova Mono", "Iosevka Web", "Avenir Next Condensed", "Lato", Helvetica, Arial, sans-serif;
   font-weight: 200;
-  background: #44475a;
+  /* background: #44475a; */
   /* background: #f8f8f8; */
   /* margin: 50px 0 100px; */
   margin: 0;
@@ -13,6 +13,11 @@ body {
   /* color: #39424b; */
   /* position: relative; */
   text-transform: lowercase;
+  background: radial-gradient(
+    circle closest-corner at center 125px,
+    #282a36d0,
+    #282a36 100%
+  ) no-repeat;
 }
 
 /* body, html {
@@ -195,8 +200,8 @@ ul.two-column li {
 
 /* Layouts */
 .page {
-  background: #282a36;
-  background-color: #282a36;
+  /* background: #282a36;
+  background-color: #282a36; */
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   color: #f8f8f2;
@@ -233,6 +238,7 @@ ul.two-column li {
   padding: 0;
   /* object-fit: cover; */
   border: 2px solid #50fa7b	;
+  /* border- */
   /* object-fit: scale-down; */
   /* background:hite; */
   float: right;
@@ -286,6 +292,17 @@ ul.two-column li {
   /* align-items: flex-start; */
 }
 
+.profile-header h1, .profile-header h2 {
+  background: radial-gradient(
+    circle farthest-corner at center center,
+    #ff79c6,
+    #8be9fd
+  ) no-repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .right-column {
   width: auto;
   overflow: hidden;
@@ -295,9 +312,9 @@ ul.two-column li {
   margin-left: auto;
 }
 
-.profile-pic {
-  /* marin-left: auto; */
-}
+/*.profile-pic {
+   marin-left: auto;
+}*/
 .item {
   /* margin-bottom: 15px; */
   margin-top: 20px;
